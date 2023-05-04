@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const dotenv = require("dotenv");
+dotenv.config({path: "./db-config/db"})
 
 // mongoose.set('strictQuery', false);
 // const connectDB = async () => {

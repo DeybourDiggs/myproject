@@ -1,4 +1,6 @@
-require("dotenv").config();
+require("dotenv").config()
+// const dotenv = require("dotenv");
+// dotenv.config();
 const express = require("express");
 const session = require("express-session");
 const mongoose = require('mongoose');
@@ -13,7 +15,11 @@ const connectDB = require("./db-config/db")
 
 const port =  6021;
 
+
+
 connectDB();
+
+
 
 require('./config/passport')(passport);
 

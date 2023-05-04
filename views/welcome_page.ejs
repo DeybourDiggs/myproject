@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= locals.title %></title>
+  <link rel="stylesheet" href="/css/welcome.css">
+</head>
+<body>
+  <nav>
+    <a href="/users/logout">Logout</a>
+  </nav>
+    <div class="container">
+      <span class="text1">Welcome </span>
+      <span class="text2">DeyBour's Home</span>
+
+      <div class="friends">
+        <h1>Available Users</h1>
+        <% for(var i=0; i < allUser.length; i++) { %>
+          <div class="friends_container">
+            <div class="available_user">
+              <p><%= allUser[i].userName%><p/>
+            </div>
+          </div>
+       <% } %>
+      </div>
+    </div>
+    
+</body>
+</html>

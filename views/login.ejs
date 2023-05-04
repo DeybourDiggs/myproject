@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+  <!-- <div class="wrapper">
+    <div class="form_container">
+      <% if (locals.errors) { %> <% errors.forEach(error => { %>
+        <%= error.msg %>
+      <% }); %> <% } %>
+      
+      <% if (success_msg != '') { %>
+        <%= success_msg %>
+      <% } %>
+      
+      <% if (error_msg != '') { %>
+        <%= error_msg %>
+      <% } %>
+      
+      <% if (error_msg != '') { %>
+        <%= error %>
+      <% } %>
+      <div class="form">
+        <form action="/users/login" method="POST">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email">
+          </div>
+          <div>
+            <label for="email">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password">
+          </div>
+          <button type="submit">Login</button>
+        </form>
+  
+        <p>No Account? <a href="/users/register">Register</a></p>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class="login-box">
+    <h2>Login</h2>
+    <% if (locals.errors) { %> <% errors.forEach(error => { %>
+      <p class="error_msg"><%= error.msg %></p>
+    <% }); %> <% } %>
+    
+    <% if (success_msg != '') { %>
+      <p class="success_msg"><%= success_msg %></p>
+    <% } %>
+    
+    <% if (error_msg != '') { %>
+      <p class="error_msg"><%= error.msg %></p>
+    <% } %>
+    
+    <% if (error_msg != '') { %>
+      <p class="error_msg"><%= error %></p>
+    <% } %>
+    <form action="/users/login" method="POST">
+      <div class="user-box">
+        <input type="email" name="email" id="email"  required="">
+        <label>Email</label>
+      </div>
+      
+      <div class="user-box">
+        <input type="password" name="password" id="password" required="">
+        <label>Password</label>
+      </div>
+      
+      <button class="btn_submit" href="a">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        LOGIN</button>
+      </form>
+      <div>
+        <p class="forget_pass">Don't Have An Account? <a href="/users/register">Register here</a></p>
+        <!-- <a herf="a" >Forgot Password ? </a> -->
+      </div>
+  </div>     
+  
+</body>
+</html>

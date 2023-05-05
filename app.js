@@ -27,15 +27,26 @@ require('./config/passport')(passport);
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
+app.set('trust proxy', 1);
 
 
-app.use(
-  session({
-    secret: process.env.SECRET,
-    resave: true,
-    saveUninitialized: true
-  })
-)
+// app.use(
+//   session({
+//     secret: process.env.SECRET,
+//     resave: true,
+//     saveUninitialized: true
+//   })
+// )
+
+app.use(session({
+  secret: process.env.SECRET,
+  saveUninitialized: true,
+  resave: true,
+  maxAge: 1000 * 60 * 15,
+  cookie:{
+      secure: true
+         }
+  }));
 
 app.use(passport.initialize())
 app.use(passport.session());
